@@ -54,7 +54,7 @@ style custom_menu_button_text is button_text:
 
 
 # ============================================
-# MAKE THE QUICK MENU APPEAR DURING GAMEPLAY
+# QUICK MENU OVERLAY
 # ============================================
 
 init python:
@@ -63,8 +63,9 @@ init python:
 
 
 # ============================================
-# CUSTOM QUICK MENU
+# QUICK MENU
 # Auto | Skip | Hide | History | Settings
+# Positioned along the bottom of the textbox
 # ============================================
 
 screen quick_menu():
@@ -73,7 +74,7 @@ screen quick_menu():
 
     hbox:
         xalign 0.98
-        yalign 0.88
+        yalign 0.97
         spacing 12
 
         textbutton _("Auto"):
@@ -123,25 +124,26 @@ style quick_button_text:
 
 # ============================================
 # CHARACTER POSITIONS AND TRANSITIONS
-# All characters use zoom 0.5.
 #
 # t = normal appearance
 # h = hop when appearing
-#
-# ONE-POSITION LAYOUT
+# All transforms use zoom 0.65.
+# All transforms fade out when hidden.
 # ============================================
+
+# ONE-POSITION LAYOUT
 
 transform t11:
     xalign 0.50
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on hide:
         linear 0.20 alpha 0.0
 
 transform h11:
     xalign 0.50
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on show:
         yoffset 0
         easeout 0.12 yoffset -35
@@ -152,20 +154,19 @@ transform h11:
 
 # ============================================
 # TWO-POSITION LAYOUT
-# Positions: 0.25, 0.75
 # ============================================
 
 transform t21:
     xalign 0.25
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on hide:
         linear 0.20 alpha 0.0
 
 transform h21:
     xalign 0.25
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on show:
         yoffset 0
         easeout 0.12 yoffset -35
@@ -176,14 +177,14 @@ transform h21:
 transform t22:
     xalign 0.75
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on hide:
         linear 0.20 alpha 0.0
 
 transform h22:
     xalign 0.75
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on show:
         yoffset 0
         easeout 0.12 yoffset -35
@@ -194,20 +195,19 @@ transform h22:
 
 # ============================================
 # THREE-POSITION LAYOUT
-# Positions: 0.16, 0.50, 0.84
 # ============================================
 
 transform t31:
     xalign 0.16
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on hide:
         linear 0.20 alpha 0.0
 
 transform h31:
     xalign 0.16
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on show:
         yoffset 0
         easeout 0.12 yoffset -35
@@ -218,14 +218,14 @@ transform h31:
 transform t32:
     xalign 0.50
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on hide:
         linear 0.20 alpha 0.0
 
 transform h32:
     xalign 0.50
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on show:
         yoffset 0
         easeout 0.12 yoffset -35
@@ -236,14 +236,14 @@ transform h32:
 transform t33:
     xalign 0.84
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on hide:
         linear 0.20 alpha 0.0
 
 transform h33:
     xalign 0.84
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on show:
         yoffset 0
         easeout 0.12 yoffset -35
@@ -254,20 +254,19 @@ transform h33:
 
 # ============================================
 # FOUR-POSITION LAYOUT
-# Positions: 0.12, 0.37, 0.63, 0.88
 # ============================================
 
 transform t41:
     xalign 0.12
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on hide:
         linear 0.20 alpha 0.0
 
 transform h41:
     xalign 0.12
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on show:
         yoffset 0
         easeout 0.12 yoffset -35
@@ -278,14 +277,14 @@ transform h41:
 transform t42:
     xalign 0.37
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on hide:
         linear 0.20 alpha 0.0
 
 transform h42:
     xalign 0.37
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on show:
         yoffset 0
         easeout 0.12 yoffset -35
@@ -296,14 +295,14 @@ transform h42:
 transform t43:
     xalign 0.63
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on hide:
         linear 0.20 alpha 0.0
 
 transform h43:
     xalign 0.63
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on show:
         yoffset 0
         easeout 0.12 yoffset -35
@@ -314,14 +313,14 @@ transform h43:
 transform t44:
     xalign 0.88
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on hide:
         linear 0.20 alpha 0.0
 
 transform h44:
     xalign 0.88
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on show:
         yoffset 0
         easeout 0.12 yoffset -35
@@ -332,20 +331,19 @@ transform h44:
 
 # ============================================
 # FIVE-POSITION LAYOUT
-# Positions: 0.10, 0.30, 0.50, 0.70, 0.90
 # ============================================
 
 transform t51:
     xalign 0.10
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on hide:
         linear 0.20 alpha 0.0
 
 transform h51:
     xalign 0.10
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on show:
         yoffset 0
         easeout 0.12 yoffset -35
@@ -356,14 +354,14 @@ transform h51:
 transform t52:
     xalign 0.30
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on hide:
         linear 0.20 alpha 0.0
 
 transform h52:
     xalign 0.30
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on show:
         yoffset 0
         easeout 0.12 yoffset -35
@@ -374,14 +372,14 @@ transform h52:
 transform t53:
     xalign 0.50
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on hide:
         linear 0.20 alpha 0.0
 
 transform h53:
     xalign 0.50
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on show:
         yoffset 0
         easeout 0.12 yoffset -35
@@ -392,14 +390,14 @@ transform h53:
 transform t54:
     xalign 0.70
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on hide:
         linear 0.20 alpha 0.0
 
 transform h54:
     xalign 0.70
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on show:
         yoffset 0
         easeout 0.12 yoffset -35
@@ -410,14 +408,14 @@ transform h54:
 transform t55:
     xalign 0.90
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on hide:
         linear 0.20 alpha 0.0
 
 transform h55:
     xalign 0.90
     yalign 1.0
-    zoom 0.5
+    zoom 0.65
     on show:
         yoffset 0
         easeout 0.12 yoffset -35
