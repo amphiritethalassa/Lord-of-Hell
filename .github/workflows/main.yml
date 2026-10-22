@@ -1,0 +1,40 @@
+
+name: Build My Visual Novel
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up headless display and audio
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb
+          echo "SDL_VIDEODRIVER=dummy" >> $GITHUB_ENV
+          echo "SDL_AUDIODRIVER=dummy" >> $GITHUB_ENV
+
+      - name: Install Ren'Py
+        uses: Ayowel/renpy-setup-action@v3
+        with:
+          action: install
+          version: "6.99.12"
+
+      - name: Build Windows version
+        uses: Ayowel/renpy-setup-action@v3
+        with:
+          action: distribute
+          packages: win
+          out_dir: build
+
+      - name: Upload Windows build
+        uses: actions/upload-artifact@v4
+        with:
+          name: My-Visual-Novel-Windows
+          path: build/
