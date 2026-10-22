@@ -1,4 +1,4 @@
 label start:
-    scene black
-    "Your visual novel starts here."
+    scene bg room_day
+    c 1a "Your visual novel starts here."
     return
