@@ -10,9 +10,9 @@ screen main_menu():
     add Solid("#171520")
 
     vbox:
-        xalign 0.05
-        yalign 0.5
-        spacing 18
+    xalign 0.95
+    yalign 0.5
+    spacing 18
 
         text "My Visual Novel":
             size 42
