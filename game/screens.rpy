@@ -7,14 +7,14 @@ screen main_menu():
 
     tag menu
 
-    add Solid("#171520")
+    add "images/main_menu.png"
 
     vbox:
         xalign 0.95
         yalign 0.5
         spacing 18
 
-        text "My Visual Novel":
+        text "Lord Of Hell":
             size 42
             color "#ffffff"
 
